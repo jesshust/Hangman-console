@@ -4,7 +4,8 @@ var Word = require('./word.js');
 prompt.start();
 
 game = {
-	wordBank : ["heart and soul", "relax", "burning up", "manic monday", "into the groove", "invisible touch", "rebel yell"],
+	wordBank : ["Nintendo"],
+	//"Yoshi", "Mario", "Peach", "Toad", "Boo", "Bowser", "Koopa", "Luigi", "Bullet Bill"],
 	wordsWon : 0,
 	guessesRemaining : 10, //per word
 	currentWrd : null, //the word object

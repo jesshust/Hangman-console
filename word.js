@@ -3,24 +3,24 @@ var Letter = require('./letter.js');
 
 var Word = function(wrd){
 	//set a property called word and set it equal to what you think it should be
-	var word = wrd; 
+	this.word = wrd; 
 	//set a property called lets to an empty array. We will eventually push letter objects in here
-	var lets = []; 
+	this.lets = []; 
 	//set a property called found to false
-	var found = false; 
+	this.found = false; 
 	//make a property called getLets, set it to a function and inside the function loop over the word property and push letter objects into the lets property.
-	var getLets = function() {
-		for(i = 0; i < word.length; i++){
-			lets.push(new Letter (word[i])); 
+	this.getLets = function() {
+		for(i = 0; i < this.word.length; i++){
+			this.lets.push(new Letter (this.word[i])); 
 		}
 	}
 	//returns true or false whether we found the current word or not
 	this.didWeFindTheWord = function() {
 		//set the found property to true or false based on whether all the letters have been found or not
 		found = true; 
-		for (i = 0; i < lets.length; i++)
+		for (i = 0; i < this.lets.length; i++)
 		{
-			if (lets[i].appear == false) {
+			if (this.lets[i].appear == false) {
 				found = false; 
 			} 
 		}
@@ -33,9 +33,9 @@ var Word = function(wrd){
 		var whatToReturn = 0; 
 
 		//loop over the lets property and if the letter object's charac property equals the guessletter then set the appear property of the letter object to be true. Also increment whatToReturn.
-		for (i = 0; i < lets.length; i++) {
-			if(lets[i].character == guessLetter.toLowerCase){
-				lets[i].appear = true; 
+		for (i = 0; i < this.lets.length; i++) {
+			if(this.lets[i].charac === guessLetter.toLowerCase()){
+				this.lets[i].appear = true; 
 				whatToReturn++; 
 			}
 		}
@@ -49,7 +49,7 @@ var Word = function(wrd){
 
 		//loop over this.lets and call the letterRender property of the letter object that you're looping over, and add it to str
 		for (i = 0; i <this.lets.length; i++){
-			str += lets[i].letterRender(); 
+			str += this.lets[i].letterRender(); 
 		}
 		//return str
 		return str; 
@@ -57,4 +57,4 @@ var Word = function(wrd){
 }
 
 //export the Word constructor here at the end
-exports.Word = Word; 
+module.exports = Word; 
