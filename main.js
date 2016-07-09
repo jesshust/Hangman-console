@@ -4,8 +4,7 @@ var Word = require('./word.js');
 prompt.start();
 
 game = {
-	wordBank : ["Nintendo"],
-	//"Yoshi", "Mario", "Peach", "Toad", "Boo", "Bowser", "Koopa", "Luigi", "Bullet Bill"],
+	wordBank : ["Nintendo","Yoshi", "Mario", "Peach", "Toad", "Boo", "Bowser", "Koopa", "Luigi", "Bullet Bill"],
 	wordsWon : 0,
 	guessesRemaining : 10, //per word
 	currentWrd : null, //the word object
@@ -31,17 +30,17 @@ game = {
 		    // result is an object like this: { guessLetter: 'f' }
 		    //console.log(result);
 		    
-		    console.log('  The letter or space you guessed is: ' + result.guessLetter);
+		    console.log('  The letter you guessed is: ' + result.guessLetter);
 
 		    //this checks if the letter was found and if it is then it sets that specific letter in the word to be found
 		    var findHowManyOfUserGuess = self.currentWrd.checkIfLetterFound(result.guessLetter);
 
 		    //if the user guessed incorrectly minus the number of guesses they have left
 		    if (findHowManyOfUserGuess == 0){
-		    	console.log('You guessed wrong!');
+		    	console.log('Oh, no! You guessed WRONG!');
 		    	self.guessesRemaining--;
 		    }else{
-		    	console.log('You guessed right!');
+		    	console.log('Yay you! You guessed RIGHT!');
 
 		    	//check if you win only when you are right
 	    		if(self.currentWrd.didWeFindTheWord()){
@@ -58,8 +57,8 @@ game = {
 		    	self.keepPromptingUser();
 		    }
 		    else if(self.guessesRemaining == 0){
-		    	console.log('Game over bro it was ', self.currentWrd.word);
-		    	console.log('Get with the program man');
+		    	console.log('Sad panda. The word was ', self.currentWrd.word);
+		    	console.log('Whoa. Clueless much?');
 		    }else{
 		    	console.log(self.currentWrd.wordRender());
 		    }
