@@ -1,23 +1,29 @@
 {
   "name": "Hangman-console",
   "version": "1.0.0",
-  "description": "hangman game",
+  "description": "Create Hangman using constructors, objects and Node.js",
   "main": "main.js",
+  "dependencies":{
+    "inquirer": "^1.1.2"
+  }, 
+  "devDependecies": {}, 
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jesshust/Hangman-console"
+    "url": "git+https://github.com/jesshust/Hangman-console.git"
   },
+  "keywords": [
+    "Hangman", 
+    "Game", 
+    "Node"
+  ], 
+
   "author": "Jess Hust",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/jesshust/Hangman-console"
+    "url": "https://github.com/jesshust/Hangman-console/issues"
   },
-  "homepage": "https://github.com/jesshust/Hangman-console#readme",
-  "dependencies": {
-    "inquirer": "^1.1.2",
-    "prompt": "^1.0.0"
-  }
+  "homepage": "https://github.com/jesshust/Hangman-console#readme"
 }
