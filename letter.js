@@ -1,16 +1,17 @@
 
-var Letter = function(chr) {
-	this.character = chr.toLowerCase();
-	this.appear = false;
+var Letter = function(let) {
+	this.character = let.toLowerCase(); 
+
+	//make an appear property and set it to what makes sense
+	this.appear = false; 
+	//make a letterRender property and set it to a function that does what you think makes sense
 	this.letterRender = function() {
 		if(this.appear) {
-			return this.character;
-		} else if(this.character == " ") {
-			this.appear = true;
-			return " " + this.character + " ";
-		} else {
-			return "_ ";
+			return this.character; 
+		}else {return "_"; 
 		}
+		
 	}
-}
+};
+
 exports.Letter = Letter;
