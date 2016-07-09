@@ -57,8 +57,8 @@ game = {
 		    	self.keepPromptingUser();
 		    }
 		    else if(self.guessesRemaining == 0){
-		    	console.log('Sad panda. The word was ', self.currentWrd.word);
-		    	console.log('Whoa. Clueless much?');
+		    	console.log('Mama Mia! The word was', self.currentWrd.word);
+		    	console.log('Whoa. WHY DON\'T YOU LOVE NINTENDO?!');
 		    }else{
 		    	console.log(self.currentWrd.wordRender());
 		    }
